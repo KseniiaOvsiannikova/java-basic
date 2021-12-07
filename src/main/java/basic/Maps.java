@@ -2,6 +2,7 @@ package basic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class Maps {
@@ -29,6 +30,24 @@ public class Maps {
         if (!passportsAndNames.isEmpty()) {
 
             System.out.println(passportsAndNames);
+
+        }
+
+        //merge 2 maps
+        HashMap<Integer, String> passportsAndNames2 = new HashMap<>();
+
+        passportsAndNames2.put(917352, "Алексей Андреевич Ермаков");
+        passportsAndNames2.put(925648, "Максим Олегович Архаров");
+
+
+        passportsAndNames.putAll(passportsAndNames2);
+        System.out.println(passportsAndNames);
+        System.out.println("\n" + passportsAndNames2 + "\n");
+
+        //print every pair in cycle
+        for (Map.Entry entry: passportsAndNames.entrySet()) {
+
+            System.out.println(entry);
 
         }
     }
