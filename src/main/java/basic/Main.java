@@ -2,6 +2,8 @@ package basic;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -18,5 +20,14 @@ public class Main {
 
         System.out.println(reversedArrayList);
 
-        }
+        //maps
+        HashMap<Integer, String> passportsAndNamesMap = Maps.addPassportsAndNames();
+        Set<Integer> printKeysFromMap = Maps.printKeysAndValues(passportsAndNamesMap);
+        ArrayList<String> printListOfValuesFromMap = Maps.printListOfValues(passportsAndNamesMap);
+        HashMap<Integer, String> mergedTwoHashMaps = Maps.mergeTwoHashMaps(passportsAndNamesMap);
+        HashMap<Integer, String> printEveryPairOfMapInCycle = Maps.printEveryPairOfMapInCycle(passportsAndNamesMap);
+
+        //Strings
+
     }
+}

@@ -7,49 +7,54 @@ import java.util.Set;
 
 public class Maps {
 
-    public static void main(String[] args) {
-
+    static HashMap<Integer, String> addPassportsAndNames() {
         HashMap<Integer, String> passportsAndNames = new HashMap<>();
 
-        passportsAndNames.put(212133, "Лидия Аркадьевна Бубликова");
-        passportsAndNames.put(162348, "Иван Михайлович Серебряков");
-        passportsAndNames.put(8082771, "Дональд Джон Трамп");
-
-        //contains key and value
-        System.out.println(passportsAndNames.containsKey(11111));
-        System.out.println(passportsAndNames.containsValue("Дональд Джон Трамп"));
-
-        //print in console keySet and arraylist values
-        Set<Integer> keys = passportsAndNames.keySet();
-        System.out.println("Ключи: " + keys);
-
-        ArrayList<String> values = new ArrayList<>(passportsAndNames.values());
-        System.out.println("Значения: " + values);
-
+        passportsAndNames.put(212133, "Jackson Eric");
+        passportsAndNames.put(162348, "Gagarin Jury");
+        passportsAndNames.put(8082771, "Jackson Jack");
         //print map pairs in console after checking it is not empty
         if (!passportsAndNames.isEmpty()) {
-
             System.out.println(passportsAndNames);
-
         }
 
-        //merge 2 maps
-        HashMap<Integer, String> passportsAndNames2 = new HashMap<>();
+        return passportsAndNames;
+    }
 
-        passportsAndNames2.put(917352, "Алексей Андреевич Ермаков");
-        passportsAndNames2.put(925648, "Максим Олегович Архаров");
+    static Set<Integer> printKeysAndValues(HashMap<Integer, String> passportsAndNames) {
+        System.out.println("passportsAndNames.containsKey(11111): " + passportsAndNames.containsKey(11111));
+        Set<Integer> keys = passportsAndNames.keySet();
+        System.out.println("Keys of the Map: " + keys);
 
+        return keys;
+    }
 
-        passportsAndNames.putAll(passportsAndNames2);
-        System.out.println(passportsAndNames);
-        System.out.println("\n" + passportsAndNames2 + "\n");
+    static ArrayList<String> printListOfValues(HashMap<Integer, String> passportsAndNames) {
+        System.out.println("passportsAndNames.containsValue(\"Jackson Eric\"): " + passportsAndNames.containsValue("Jackson Eric"));
+        ArrayList<String> values = new ArrayList<>(passportsAndNames.values());
+        System.out.println("Values of the Map: " + values);
 
-        //print every pair in cycle
-        for (Map.Entry entry: passportsAndNames.entrySet()) {
+        return values;
+    }
 
-            System.out.println(entry);
+    static HashMap<Integer, String> mergeTwoHashMaps(HashMap<Integer, String> passportsAndNames) {
+        HashMap<Integer, String> passportsAndNamesToMerge = new HashMap<>();
+        passportsAndNamesToMerge.put(917352, "Gagarin Jane");
+        passportsAndNamesToMerge.put(925648, "Smith Joe");
 
+        passportsAndNames.putAll(passportsAndNamesToMerge);
+        System.out.println("Map to merge contains:" + passportsAndNamesToMerge);
+        System.out.println("Map after merge contains: " + passportsAndNames + "\n");
+
+        return passportsAndNamesToMerge;
+    }
+
+    static HashMap<Integer, String> printEveryPairOfMapInCycle(HashMap<Integer, String> passportsAndNames) {
+        for (Map.Entry entry : passportsAndNames.entrySet()) {
+            System.out.println("Each element of the Map in cicle: " + entry);
         }
+        return passportsAndNames;
     }
 }
+
 

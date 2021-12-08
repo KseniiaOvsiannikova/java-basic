@@ -32,7 +32,6 @@ public class Arrays {
 
         ArrayList<String> arrayList = new ArrayList<String>();
         Reader r = new InputStreamReader(System.in);
-        System.out.println("Enter 10 Strings separating with Enter for Array:");
         BufferedReader reader = new BufferedReader(r);
         for (int i = 0; i < 10; i++) {
             arrayList.add(reader.readLine());
